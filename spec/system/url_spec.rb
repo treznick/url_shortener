@@ -22,6 +22,7 @@ RSpec.describe "URL Management", type: :system do
         within "li##{dom_id(short_link)}" do
           expect(page).to have_content(url)
           expect(page).to have_content(short_link.friendly_id)
+          expect(page).to have_content("http://www.example.com/#{short_link.friendly_id}")
         end
       end
     end

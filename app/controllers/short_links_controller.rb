@@ -37,7 +37,9 @@ class ShortLinksController < ApplicationController
   end
 
   def load_short_links
-    @short_links = ShortLink.all.order(:created_at)
+    @short_links = ShortLink.all.order(:created_at).map { |short_link|
+      ShortLinkUrlPresenter.new(short_link, view_context)
+    }
   end
 
   def short_link_params
