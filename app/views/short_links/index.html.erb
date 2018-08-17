@@ -1,0 +1,15 @@
+<div class="jumbotron">
+  <h1 class="display-4"><%= ShortLink.model_name.human(count: 2) %></h1>
+  <p class="lead"><%= t(".welcome_text") %></p>
+  <hr class="my-4">
+  <%= simple_form_for @short_link do |f| %>
+    <%= f.input :url %>
+    <%= f.button :submit, class: "btn btn-primary" %>
+  <% end %>
+  <% if @short_links.present? %>
+    <hr class="my-4">
+    <ul class="list-group">
+      <%= render @short_links %>
+    </ul>
+  <% end %>
+</div>

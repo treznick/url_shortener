@@ -30,7 +30,12 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  short_links:
+    create:
+      success: Short Link Created!
+      error: Something went wrong
+    index:
+      welcome_text: Create Short Link URLs
   activerecord:
     attributes:
       short_link:
