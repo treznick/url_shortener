@@ -31,3 +31,12 @@
 
 en:
   hello: "Hello world"
+  activerecord:
+    attributes:
+      short_link:
+        url: URL
+        friendly_id: Friendly ID
+    models:
+      short_link:
+        one: Short Link
+        other: Short Links
