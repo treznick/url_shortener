@@ -25,5 +25,29 @@ RSpec.describe "URL Management", type: :system do
         end
       end
     end
+
+    context "given an invalid uri" do
+      context "like something weird" do
+        let(:url) { "something weird" }
+
+        it "displays the appropriate errors" do
+          fill_in "URL", with: url
+          click_button "Create"
+          expect(page).not_to have_content(url)
+          expect(page).to have_content("must be a RFC-2396 Compliant URI")
+        end
+      end
+
+      context "or a rfc-2396 compliant string without a host" do
+        let(:url) { "www.google.com" }
+
+        it "displays the appropriate errors" do
+          fill_in "URL", with: url
+          click_button "Create"
+          expect(page).not_to have_content(url)
+          expect(page).to have_content("must have a host")
+        end
+      end
+    end
   end
 end
