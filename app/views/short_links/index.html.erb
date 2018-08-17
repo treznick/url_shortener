@@ -9,7 +9,7 @@
   <% if @short_links.present? %>
     <hr class="my-4">
     <ul class="list-group">
-      <%= render @short_links %>
+      <%= render collection: @short_links, partial: :short_link %>
     </ul>
   <% end %>
 </div>
