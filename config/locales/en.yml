@@ -30,12 +30,24 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  short_links:
+    create:
+      success: Short Link Created!
+      error: Something went wrong
+    index:
+      welcome_text: Create Short Link URLs
   activerecord:
     attributes:
       short_link:
         url: URL
         friendly_id: Friendly ID
+    errors:
+      models:
+        short_link:
+          attributes:
+            url:
+              not_rfc2396_compliant: must be a RFC-2396 Compliant URI
+              blank_host: must have a host
     models:
       short_link:
         one: Short Link

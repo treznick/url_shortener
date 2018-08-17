@@ -1,0 +1,10 @@
+<li class="list-group-item" id="<%= dom_id(short_link) %>">
+  <dl class="row">
+    <dt class="col-sm-3"><%= ShortLink.human_attribute_name(:url) %><dt>
+    <dd class="col-sm-9"><%= short_link.url %><dd>
+    <dt class="col-sm-3"><%= ShortLink.human_attribute_name(:friendly_id) %><dt>
+    <dd class="col-sm-9"><%= short_link.friendly_id %><dd>
+    <dt class="col-sm-3"><%= ShortLink.human_attribute_name(:shortened_url) %><dt>
+    <dd class="col-sm-9"><%= link_to nil, short_link.shortened_url, target: "_blank" %><dd>
+  <dl>
+</li>
