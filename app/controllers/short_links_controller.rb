@@ -1,6 +1,6 @@
 class ShortLinksController < ApplicationController
   before_action :build_short_link, only: [:index]
-  before_action :load_short_links, only: [:index]
+  before_action :load_short_links, only: [:index, :create]
   before_action :find_short_link, only: [:show]
 
   def index
